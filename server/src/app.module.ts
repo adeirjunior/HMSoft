@@ -8,6 +8,7 @@ import { UserModule } from './user/user.module';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { join } from 'path';
+import { HotelModule } from './hotel/hotel.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { join } from 'path';
       },
     }),
     UserModule,
+    HotelModule,
   ],
   controllers: [AppController],
   providers: [AppService],
