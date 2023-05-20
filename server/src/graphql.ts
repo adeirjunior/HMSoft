@@ -9,7 +9,11 @@
 /* eslint-disable */
 
 export interface CreateHotelInput {
-    exampleField?: Nullable<number>;
+    name: string;
+    email?: Nullable<string>;
+    address: string;
+    phone?: Nullable<string>;
+    photo?: Nullable<string>;
 }
 
 export interface UpdateHotelInput {
@@ -32,11 +36,13 @@ export interface UpdateUserInput {
 }
 
 export interface Hotel {
-    _id?: Nullable<string>;
+    _id: string;
     name?: Nullable<string>;
     email?: Nullable<string>;
+    address?: Nullable<string>;
     phone?: Nullable<string>;
     photo?: Nullable<string>;
+    active?: Nullable<boolean>;
 }
 
 export interface IQuery {
