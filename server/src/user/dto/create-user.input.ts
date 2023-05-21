@@ -4,7 +4,6 @@ import {
   IsNotEmpty,
   IsPhoneNumber,
   IsUrl,
-  IsDate,
 } from 'class-validator';
 import { InputType, Field } from '@nestjs/graphql';
 
@@ -37,6 +36,5 @@ export class CreateUserInput {
   cnpj?: string;
 
   @Field()
-  @IsDate()
-  businessCreated?: string;
+  businessCreated?: Date;
 }

@@ -2,13 +2,16 @@ import { Resolver, Query, Mutation, Args, ID } from '@nestjs/graphql';
 import { UserService } from './user.service';
 import { CreateUserInput } from './dto/create-user.input';
 import { UpdateUserInput } from './dto/update-user.input';
+import { ValidationPipe } from '@nestjs/common';
 
 @Resolver('User')
 export class UserResolver {
   constructor(private readonly userService: UserService) {}
 
   @Mutation('createUser')
-  create(@Args('createUserInput') createUserInput: CreateUserInput) {
+  create(
+    @Args('createUserInput', ValidationPipe) createUserInput: CreateUserInput,
+  ) {
     console.log(createUserInput);
     return this.userService.create(createUserInput);
   }
