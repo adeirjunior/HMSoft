@@ -7,7 +7,6 @@ import {
   IsNotEmpty,
   IsPhoneNumber,
   IsUrl,
-  IsDate,
 } from 'class-validator';
 
 export type UserDocument = HydratedDocument<User>;
@@ -52,7 +51,7 @@ export class User {
 
   @Prop({ required: true })
   @Field(() => Date, { description: 'Your your business started' })
-  businessCreated: Date;
+  businessCreatedAt: Date;
 
   @Prop({ required: true, default: () => new Date() })
   @Field(() => Date, { description: 'When your account was created' })

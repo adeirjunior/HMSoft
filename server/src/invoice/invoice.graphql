@@ -1,0 +1,24 @@
+type Invoice {
+  # Example field (placeholder)
+  exampleField: Int
+}
+
+input CreateInvoiceInput {
+  # Example field (placeholder)
+  exampleField: Int
+}
+
+input UpdateInvoiceInput {
+  id: Int!
+}
+
+type Query {
+  invoice: [Invoice]!
+  invoice(id: Int!): Invoice
+}
+
+type Mutation {
+  createInvoice(createInvoiceInput: CreateInvoiceInput!): Invoice!
+  updateInvoice(updateInvoiceInput: UpdateInvoiceInput!): Invoice!
+  removeInvoice(id: Int!): Invoice
+}

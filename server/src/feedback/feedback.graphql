@@ -1,0 +1,24 @@
+type Feedback {
+  # Example field (placeholder)
+  exampleField: Int
+}
+
+input CreateFeedbackInput {
+  # Example field (placeholder)
+  exampleField: Int
+}
+
+input UpdateFeedbackInput {
+  id: Int!
+}
+
+type Query {
+  feedback: [Feedback]!
+  feedback(id: Int!): Feedback
+}
+
+type Mutation {
+  createFeedback(createFeedbackInput: CreateFeedbackInput!): Feedback!
+  updateFeedback(updateFeedbackInput: UpdateFeedbackInput!): Feedback!
+  removeFeedback(id: Int!): Feedback
+}

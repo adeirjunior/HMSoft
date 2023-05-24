@@ -1,0 +1,24 @@
+type Reservation {
+  # Example field (placeholder)
+  exampleField: Int
+}
+
+input CreateReservationInput {
+  # Example field (placeholder)
+  exampleField: Int
+}
+
+input UpdateReservationInput {
+  id: Int!
+}
+
+type Query {
+  reservation: [Reservation]!
+  reservation(id: Int!): Reservation
+}
+
+type Mutation {
+  createReservation(createReservationInput: CreateReservationInput!): Reservation!
+  updateReservation(updateReservationInput: UpdateReservationInput!): Reservation!
+  removeReservation(id: Int!): Reservation
+}

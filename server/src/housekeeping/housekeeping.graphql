@@ -1,0 +1,24 @@
+type Housekeeping {
+  # Example field (placeholder)
+  exampleField: Int
+}
+
+input CreateHousekeepingInput {
+  # Example field (placeholder)
+  exampleField: Int
+}
+
+input UpdateHousekeepingInput {
+  id: Int!
+}
+
+type Query {
+  housekeeping: [Housekeeping]!
+  housekeeping(id: Int!): Housekeeping
+}
+
+type Mutation {
+  createHousekeeping(createHousekeepingInput: CreateHousekeepingInput!): Housekeeping!
+  updateHousekeeping(updateHousekeepingInput: UpdateHousekeepingInput!): Housekeeping!
+  removeHousekeeping(id: Int!): Housekeeping
+}

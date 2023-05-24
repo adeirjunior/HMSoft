@@ -1,0 +1,24 @@
+type Maintenance {
+  # Example field (placeholder)
+  exampleField: Int
+}
+
+input CreateMaintenanceInput {
+  # Example field (placeholder)
+  exampleField: Int
+}
+
+input UpdateMaintenanceInput {
+  id: Int!
+}
+
+type Query {
+  maintenance: [Maintenance]!
+  maintenance(id: Int!): Maintenance
+}
+
+type Mutation {
+  createMaintenance(createMaintenanceInput: CreateMaintenanceInput!): Maintenance!
+  updateMaintenance(updateMaintenanceInput: UpdateMaintenanceInput!): Maintenance!
+  removeMaintenance(id: Int!): Maintenance
+}

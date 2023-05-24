@@ -1,0 +1,24 @@
+type Conference {
+  # Example field (placeholder)
+  exampleField: Int
+}
+
+input CreateConferenceInput {
+  # Example field (placeholder)
+  exampleField: Int
+}
+
+input UpdateConferenceInput {
+  id: Int!
+}
+
+type Query {
+  conference: [Conference]!
+  conference(id: Int!): Conference
+}
+
+type Mutation {
+  createConference(createConferenceInput: CreateConferenceInput!): Conference!
+  updateConference(updateConferenceInput: UpdateConferenceInput!): Conference!
+  removeConference(id: Int!): Conference
+}

@@ -9,6 +9,21 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { join } from 'path';
 import { HotelModule } from './hotel/hotel.module';
+import { RoomModule } from './room/room.module';
+import { CategorieModule } from './categorie/categorie.module';
+import { GuestModule } from './guest/guest.module';
+import { CategoryModule } from './category/category.module';
+import { ReservationModule } from './reservation/reservation.module';
+import { StaffModule } from './staff/staff.module';
+import { FeedbackModule } from './feedback/feedback.module';
+import { InvoiceModule } from './invoice/invoice.module';
+import { BookingModule } from './booking/booking.module';
+import { ServiceModule } from './service/service.module';
+import { EventModule } from './event/event.module';
+import { PaymentModule } from './payment/payment.module';
+import { ConferenceModule } from './conference/conference.module';
+import { MaintenanceModule } from './maintenance/maintenance.module';
+import { HousekeepingModule } from './housekeeping/housekeeping.module';
 
 @Module({
   imports: [
@@ -27,6 +42,21 @@ import { HotelModule } from './hotel/hotel.module';
     }),
     UserModule,
     HotelModule,
+    RoomModule,
+    CategorieModule,
+    GuestModule,
+    CategoryModule,
+    ReservationModule,
+    StaffModule,
+    FeedbackModule,
+    InvoiceModule,
+    BookingModule,
+    ServiceModule,
+    EventModule,
+    PaymentModule,
+    ConferenceModule,
+    MaintenanceModule,
+    HousekeepingModule,
   ],
   controllers: [AppController],
   providers: [AppService],

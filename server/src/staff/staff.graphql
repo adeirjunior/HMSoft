@@ -1,0 +1,24 @@
+type Staff {
+  # Example field (placeholder)
+  exampleField: Int
+}
+
+input CreateStaffInput {
+  # Example field (placeholder)
+  exampleField: Int
+}
+
+input UpdateStaffInput {
+  id: Int!
+}
+
+type Query {
+  staff: [Staff]!
+  staff(id: Int!): Staff
+}
+
+type Mutation {
+  createStaff(createStaffInput: CreateStaffInput!): Staff!
+  updateStaff(updateStaffInput: UpdateStaffInput!): Staff!
+  removeStaff(id: Int!): Staff
+}

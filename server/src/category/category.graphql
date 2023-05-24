@@ -1,0 +1,24 @@
+type Category {
+  # Example field (placeholder)
+  exampleField: Int
+}
+
+input CreateCategoryInput {
+  # Example field (placeholder)
+  exampleField: Int
+}
+
+input UpdateCategoryInput {
+  id: Int!
+}
+
+type Query {
+  category: [Category]!
+  category(id: Int!): Category
+}
+
+type Mutation {
+  createCategory(createCategoryInput: CreateCategoryInput!): Category!
+  updateCategory(updateCategoryInput: UpdateCategoryInput!): Category!
+  removeCategory(id: Int!): Category
+}
