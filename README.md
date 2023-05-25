@@ -29,13 +29,13 @@ To set up the project locally and run the existing functionality, follow these s
 2. Clone this repository to your chosen directory using the following command:
 
    ```bash
-   git clone https://github.com/your-username/repo-name.git
+   git clone https://github.com/adeirjunior/hms.git
    ```
 
 3. Navigate to the project directory:
 
    ```bash
-   cd repo-name
+   cd hms
    ```
 
 4. Install project dependencies:
