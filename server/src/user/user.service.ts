@@ -25,7 +25,7 @@ export class UserService {
 
   async findAll() {
     try {
-      const user = await this.userModel.find();
+      const user = await this.userModel.find().exec();
       if (!user) {
         return 'Users not found';
       }
@@ -35,8 +35,16 @@ export class UserService {
     }
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} user`;
+  async findOne(username: string) {
+    try {
+      const user = await this.userModel.findOne({ name: username }).exec();
+      if (!user) {
+        return 'Users not found';
+      }
+      return user;
+    } catch (error: any) {
+      return new Error(error);
+    }
   }
 
   update(id: string, updateUserInput: UpdateUserInput) {

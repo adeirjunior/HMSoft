@@ -13,7 +13,7 @@ input UpdateServiceInput {
 }
 
 type Query {
-  service: [Service]!
+  services: [Service]!
   service(id: Int!): Service
 }
 

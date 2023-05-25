@@ -13,7 +13,7 @@ input UpdateConferenceInput {
 }
 
 type Query {
-  conference: [Conference]!
+  conferences: [Conference]!
   conference(id: Int!): Conference
 }
 

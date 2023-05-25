@@ -1,6 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import configuration from './config/configuration';
 import { MongooseModule } from '@nestjs/mongoose';
@@ -10,7 +8,6 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { join } from 'path';
 import { HotelModule } from './hotel/hotel.module';
 import { RoomModule } from './room/room.module';
-import { CategorieModule } from './categorie/categorie.module';
 import { GuestModule } from './guest/guest.module';
 import { CategoryModule } from './category/category.module';
 import { ReservationModule } from './reservation/reservation.module';
@@ -24,6 +21,7 @@ import { PaymentModule } from './payment/payment.module';
 import { ConferenceModule } from './conference/conference.module';
 import { MaintenanceModule } from './maintenance/maintenance.module';
 import { HousekeepingModule } from './housekeeping/housekeeping.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -43,7 +41,6 @@ import { HousekeepingModule } from './housekeeping/housekeeping.module';
     UserModule,
     HotelModule,
     RoomModule,
-    CategorieModule,
     GuestModule,
     CategoryModule,
     ReservationModule,
@@ -57,8 +54,7 @@ import { HousekeepingModule } from './housekeeping/housekeeping.module';
     ConferenceModule,
     MaintenanceModule,
     HousekeepingModule,
+    AuthModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}

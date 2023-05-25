@@ -13,7 +13,7 @@ input UpdateEventInput {
 }
 
 type Query {
-  event: [Event]!
+  events: [Event]!
   event(id: Int!): Event
 }
 

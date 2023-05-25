@@ -13,7 +13,7 @@ input UpdateCategoryInput {
 }
 
 type Query {
-  category: [Category]!
+  categories: [Category]!
   category(id: Int!): Category
 }
 

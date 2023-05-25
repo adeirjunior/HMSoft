@@ -13,7 +13,7 @@ input UpdateRoomInput {
 }
 
 type Query {
-  room: [Room]!
+  rooms: [Room]!
   room(id: Int!): Room
 }
 

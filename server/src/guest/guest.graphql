@@ -13,7 +13,7 @@ input UpdateGuestInput {
 }
 
 type Query {
-  guest: [Guest]!
+  guests: [Guest]!
   guest(id: Int!): Guest
 }
 

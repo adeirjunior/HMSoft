@@ -13,7 +13,7 @@ input UpdateStaffInput {
 }
 
 type Query {
-  staff: [Staff]!
+  staffs: [Staff]!
   staff(id: Int!): Staff
 }
 

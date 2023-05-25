@@ -13,7 +13,7 @@ input UpdateFeedbackInput {
 }
 
 type Query {
-  feedback: [Feedback]!
+  feedbacks: [Feedback]!
   feedback(id: Int!): Feedback
 }
 

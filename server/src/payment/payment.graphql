@@ -13,7 +13,7 @@ input UpdatePaymentInput {
 }
 
 type Query {
-  payment: [Payment]!
+  payments: [Payment]!
   payment(id: Int!): Payment
 }
 

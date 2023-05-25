@@ -13,7 +13,7 @@ input UpdateMaintenanceInput {
 }
 
 type Query {
-  maintenance: [Maintenance]!
+  maintenances: [Maintenance]!
   maintenance(id: Int!): Maintenance
 }
 

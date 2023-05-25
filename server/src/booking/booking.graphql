@@ -13,7 +13,7 @@ input UpdateBookingInput {
 }
 
 type Query {
-  booking: [Booking]!
+  bookings: [Booking]!
   booking(id: Int!): Booking
 }
 
