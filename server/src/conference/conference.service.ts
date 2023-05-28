@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { CreateConferenceInput } from './dto/create-conference.input';
-import { UpdateConferenceInput } from './dto/update-conference.input';
+import { CreateConferenceDto } from './dto/create-conference.dto';
+import { UpdateConferenceDto } from './dto/update-conference.dto';
 
 @Injectable()
 export class ConferenceService {
-  create(createConferenceInput: CreateConferenceInput) {
+  create(createConferenceDto: CreateConferenceDto) {
     return 'This action adds a new conference';
   }
 
@@ -16,7 +16,7 @@ export class ConferenceService {
     return `This action returns a #${id} conference`;
   }
 
-  update(id: number, updateConferenceInput: UpdateConferenceInput) {
+  update(id: number, updateConferenceDto: UpdateConferenceDto) {
     return `This action updates a #${id} conference`;
   }
 

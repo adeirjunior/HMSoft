@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import { CreateUserInput } from './dto/create-user.input';
-import { UpdateUserInput } from './dto/update-user.input';
+import { CreateUserDto } from './dto/create-user.dto';
+import { UpdateUserDto } from './dto/update-user.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { User } from './entities/user.entity';
-import { Model } from 'mongoose';
+import { Model, ObjectId } from 'mongoose';
 
 @Injectable()
 export class UserService {
@@ -12,10 +12,10 @@ export class UserService {
     private readonly userModel: Model<User>,
   ) {}
 
-  async create(createUserInput: CreateUserInput) {
+  async create(createUserDto: CreateUserDto) {
     try {
-      console.log(createUserInput);
-      const user = new this.userModel(createUserInput),
+      console.log(createUserDto);
+      const user = new this.userModel(createUserDto),
         savedUser = await user.save();
       return savedUser;
     } catch (error: any) {
@@ -35,9 +35,9 @@ export class UserService {
     }
   }
 
-  async findOne(username: string) {
+  async findOne(_id: ObjectId) {
     try {
-      const user = await this.userModel.findOne({ name: username }).exec();
+      const user = await this.userModel.findOne({ _id }).exec();
       if (!user) {
         return 'Users not found';
       }
@@ -47,11 +47,23 @@ export class UserService {
     }
   }
 
-  update(id: string, updateUserInput: UpdateUserInput) {
+  async findOneByUsername(name: string) {
+    try {
+      const user = await this.userModel.findOne({ name }).exec();
+      if (!user) {
+        return 'Users not found';
+      }
+      return user;
+    } catch (error: any) {
+      return new Error(error);
+    }
+  }
+
+  update(id: ObjectId, updateUserDto: UpdateUserDto) {
     return `This action updates a #${id} user`;
   }
 
-  remove(id: number) {
+  remove(id: ObjectId) {
     return `This action removes a #${id} user`;
   }
 }

@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { CreateHotelInput } from './dto/create-hotel.input';
-import { UpdateHotelInput } from './dto/update-hotel.input';
+import { CreateHotelDto } from './dto/create-hotel.dto';
+import { UpdateHotelDto } from './dto/update-hotel.dto';
 
 @Injectable()
 export class HotelService {
-  create(createHotelInput: CreateHotelInput) {
+  create(createHotelDto: CreateHotelDto) {
     return 'This action adds a new hotel';
   }
 
@@ -16,7 +16,7 @@ export class HotelService {
     return `This action returns a #${id} hotel`;
   }
 
-  update(id: number, updateHotelInput: UpdateHotelInput) {
+  update(id: number, updateHotelDto: UpdateHotelDto) {
     return `This action updates a #${id} hotel`;
   }
 

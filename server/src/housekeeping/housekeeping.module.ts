@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
 import { HousekeepingService } from './housekeeping.service';
-import { HousekeepingResolver } from './housekeeping.resolver';
+import { HousekeepingController } from './housekeeping.controller';
 
 @Module({
-  providers: [HousekeepingResolver, HousekeepingService]
+  controllers: [HousekeepingController],
+  providers: [HousekeepingService]
 })
 export class HousekeepingModule {}

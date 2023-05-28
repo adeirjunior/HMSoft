@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
 import { ConferenceService } from './conference.service';
-import { ConferenceResolver } from './conference.resolver';
+import { ConferenceController } from './conference.controller';
 
 @Module({
-  providers: [ConferenceResolver, ConferenceService]
+  controllers: [ConferenceController],
+  providers: [ConferenceService]
 })
 export class ConferenceModule {}
