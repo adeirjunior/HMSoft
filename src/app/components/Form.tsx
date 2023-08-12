@@ -5,7 +5,6 @@ import { HiMail } from 'react-icons/hi';
 import Link from 'next/link'
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { UserType } from '@/types/User';
-import axios from 'axios';
 
 interface FormInterface extends UserType {
     agree: boolean
