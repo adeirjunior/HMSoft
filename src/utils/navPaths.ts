@@ -16,10 +16,6 @@ const navPaths = [
       href: '/contact'
     },
     {
-      title: 'Swagger',
-      href: '/api-doc'
-    },
-    {
       title: 'Login',
       href: '/login'
     }
