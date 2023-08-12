@@ -13,8 +13,6 @@ export default function Form() {
     const {
         register,
         handleSubmit,
-        watch,
-        formState: { errors },
       } = useForm<FormInterface>()
 
     const OnSubmit: SubmitHandler<FormInterface> = (data) => {

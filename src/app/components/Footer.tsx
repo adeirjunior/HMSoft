@@ -4,6 +4,7 @@ import { Footer } from 'flowbite-react';
 import { BsFacebook, BsGithub, BsInstagram, BsTwitter } from 'react-icons/bs';
 
 export default function FooterSitemapLinks() {
+  const currentYear = new Date().getFullYear()
   return (
     <Footer>
       <div className="w-full">
@@ -77,8 +78,8 @@ export default function FooterSitemapLinks() {
         <div className="w-full bg-gray-700 px-4 py-6 sm:flex sm:items-center sm:justify-between">
           <Footer.Copyright
             by="HMSoft™"
-            href="#"
-            year={2022}
+            href="/"
+            year={currentYear}
           />
           <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
             <Footer.Icon
