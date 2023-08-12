@@ -5,7 +5,7 @@ import { BsFacebook, BsGithub, BsInstagram, BsTwitter } from 'react-icons/bs';
 
 export default function FooterSitemapLinks() {
   return (
-    <Footer bgDark>
+    <Footer>
       <div className="w-full">
         <div className="grid w-full grid-cols-2 gap-8 px-6 py-8 md:grid-cols-4">
           <div>
@@ -76,7 +76,7 @@ export default function FooterSitemapLinks() {
         </div>
         <div className="w-full bg-gray-700 px-4 py-6 sm:flex sm:items-center sm:justify-between">
           <Footer.Copyright
-            by="Flowbite™"
+            by="HMSoft™"
             href="#"
             year={2022}
           />

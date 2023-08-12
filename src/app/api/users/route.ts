@@ -1,13 +1,12 @@
 import { addUser, getUsers } from '@/services/user.service'
 import { UserType } from '@/types/User'
 import { NextResponse } from 'next/server'
-import { type NextRequest } from 'next/server'
 
 export const GET = async () => {
     try {
-        const users = await getUsers()
+        const users: UserType[]  = await getUsers()
 
-        return new NextResponse(users, { status: 200 })
+        return new NextResponse(JSON.stringify(users), { status: 200 })
     } catch (error) {
         return new NextResponse("Database Error", { status: 500 })
     }
@@ -15,11 +14,11 @@ export const GET = async () => {
 
 export const POST = async (request: Request) => {
     try {
-        const data: UserType = request.body
+        const data: UserType = request.body as unknown as UserType
         
-        const res = new NextResponse(data, { status: 200 })
+        const res = new NextResponse(JSON.stringify(data), { status: 200 })
         return res
     } catch (error) {
-        return new NextResponse(error, { status: 500 })
+        return new NextResponse(JSON.stringify(error), { status: 500 })
     }
 }

@@ -5,7 +5,7 @@ import { UserType } from "@/types/User"
 export const addUser = async ({name, username, email, password, enabled}: UserType) => {
     try {
         await connect()
-        const newUser = UserModel({
+        const newUser = new UserModel({
             name,
             username,
             email,
@@ -13,8 +13,8 @@ export const addUser = async ({name, username, email, password, enabled}: UserTy
             enabled: true
         })
 
-        await newUser.save().then(res => console.log(res))
-    } catch (error) {
+        await newUser.save().then((res: UserType) => console.log(res))
+    } catch (error: any) {
         throw new Error(error);
     }
     
@@ -30,13 +30,13 @@ export const getUser = async () => {
 
 }
 
-export const getUsers = async () => {
+export const getUsers: () => Promise<UserType[]>  = async () => {
     try {
         await connect()
-        const users = await UserModel.find()
+        const users: UserType[] = await UserModel.find()
         return users
     } catch (error) {
-        
+        return []
     }
 
 }

@@ -1,16 +1,19 @@
-'use client';
+'use client'
 
-import { Navbar } from 'flowbite-react';
-import Image from 'next/image'
+import navPaths from '@/utils/navPaths'
+import { Navbar } from 'flowbite-react'
+import { usePathname } from 'next/navigation'
 
 const Header = () => {
+  const currentPath = usePathname()
+
   return (
     <Navbar
       fluid
       rounded
     >
       <Navbar.Brand
-        href="https://flowbite-react.com"
+        href="/"
       >
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
           HMSoft
@@ -18,28 +21,20 @@ const Header = () => {
       </Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse>
-        <Navbar.Link
-          active
-          href="#"
-        >
-          <p>
-            Home
-          </p>
-        </Navbar.Link>
-        <Navbar.Link href="#">
-          <p>
-            About
-          </p>
-        </Navbar.Link>
-        <Navbar.Link href="#">
-          Services
-        </Navbar.Link>
-        <Navbar.Link href="#">
-          Pricing
-        </Navbar.Link>
-        <Navbar.Link href="#">
-          Contact
-        </Navbar.Link>
+        {navPaths.map((path, index) => {
+          const isActive = currentPath === path.href
+          return (
+            <Navbar.Link
+              key={index}
+              active={isActive}
+              href={path.href}
+            >
+              {path.title}
+            </Navbar.Link>
+          )
+        })
+        }
+
       </Navbar.Collapse>
     </Navbar>
   )
