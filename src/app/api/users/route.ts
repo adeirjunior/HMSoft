@@ -1,6 +1,6 @@
 import { addUser, getUsers } from '@/services/user.service'
 import { UserType } from '@/types/User'
-import { NextResponse } from 'next/server'
+import { NextResponse, NextRequest } from 'next/server'
 
 export const GET = async () => {
     try {
@@ -12,12 +12,12 @@ export const GET = async () => {
     }
 }
 
-export const POST = async (request: Request) => {
+export const POST = async (request: NextRequest) => {
     try {
-        const data: UserType = request.body as unknown as UserType
-        
-        const res = new NextResponse(JSON.stringify(data), { status: 200 })
-        return res
+        const data: UserType = await request.json()
+        console.log(data)
+        await addUser(data)
+        return new NextResponse(JSON.stringify(data), { status: 200 })
     } catch (error) {
         return new NextResponse(JSON.stringify(error), { status: 500 })
     }

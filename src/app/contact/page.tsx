@@ -1,7 +1,7 @@
-export default function Home() {
+export default function Contact() {
   return (
   <section className='grid place-content-center'>
-    <h2>Hello, World!</h2>
+    <h2>Contact</h2>
   </section>
   )
 }

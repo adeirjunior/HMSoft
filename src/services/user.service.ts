@@ -1,8 +1,8 @@
-import connect from "@/utils/db"
 import UserModel from '@/models/user.model'
 import { UserType } from "@/types/User"
+import connect from "@/utils/db"
 
-export const addUser = async ({name, username, email, password, enabled}: UserType) => {
+export const addUser = async ({ name, username, email, password }: UserType) => {
     try {
         await connect()
         const newUser = new UserModel({
@@ -22,7 +22,6 @@ export const addUser = async ({name, username, email, password, enabled}: UserTy
 
 export const getUser = async () => {
     try {
-        await connect()
 
     } catch (error) {
         
@@ -43,7 +42,6 @@ export const getUsers: () => Promise<UserType[]>  = async () => {
 
 export const updateUser = async () => {
     try {
-        await connect()
 
     } catch (error) {
         
@@ -53,7 +51,6 @@ export const updateUser = async () => {
 
 export const removeUser = async () => {
     try {
-        await connect()
 
     } catch (error) {
         

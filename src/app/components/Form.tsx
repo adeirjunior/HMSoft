@@ -9,6 +9,7 @@ import { UserType } from '@/types/User';
 interface FormInterface extends UserType {
     agree: boolean
 }
+
 export default function Form() {
     const {
         register,
@@ -27,8 +28,7 @@ export default function Form() {
 
         fetch('/api/users', requestOptions)
             .then(res => res.json())
-            .then(res => console.log(res))
-            .catch(err => console.log(err.response))
+            .catch(err => console.log(err.message))
     };
   return (
     <form onSubmit={handleSubmit(OnSubmit)} className="flex max-w-md flex-col gap-4">
@@ -84,7 +84,7 @@ export default function Form() {
                 I agree with the 
             </p>
             <Link
-                className="text-cyan-600 hover:underline dark:text-cyan-500"
+                className="text-cyan-600 hover:underline dark:text-cyan-500 ml-1"
                 href="/forms"
             >
                 <p>

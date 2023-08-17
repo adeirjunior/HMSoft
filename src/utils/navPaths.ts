@@ -12,10 +12,6 @@ const navPaths = [
       href: '/pricing'
     },
     {
-      title: 'Contact',
-      href: '/contact'
-    },
-    {
       title: 'Login',
       href: '/login'
     }
