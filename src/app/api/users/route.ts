@@ -15,7 +15,6 @@ export const GET = async () => {
 export const POST = async (request: NextRequest) => {
     try {
         const data: UserType = await request.json()
-        console.log(data)
         await addUser(data)
         return new NextResponse(JSON.stringify(data), { status: 200 })
     } catch (error) {

@@ -12,7 +12,6 @@ export const addUser = async ({ name, username, email, password }: UserType) => 
             password,
             enabled: true
         })
-
         await newUser.save().then((res: UserType) => console.log(res))
     } catch (error: any) {
         throw new Error(error);
