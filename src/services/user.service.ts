@@ -1,6 +1,6 @@
 import UserModel from '@/models/user.model'
 import { UserType } from "@/types/User"
-import connect from "@/utils/db"
+import connect from "@/lib/mongo"
 
 export const addUser = async ({ name, username, email, password }: UserType) => {
     try {

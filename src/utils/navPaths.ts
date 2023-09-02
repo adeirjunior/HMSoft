@@ -14,7 +14,11 @@ const navPaths = [
     {
       title: 'Login',
       href: '/login'
-    }
+    },
+    {
+      title: 'Profile',
+      href: '/profile'
+    },
   ]
 
   export default navPaths

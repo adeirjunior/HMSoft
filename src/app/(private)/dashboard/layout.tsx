@@ -1,7 +1,7 @@
-import './globals.css'
+import '@/globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { LoggedOutHeader } from '@/app/_components/header'
+import Header from '@/app/_components/Header'
 import Footer from '@/app/_components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <LoggedOutHeader />
+        <Header />
         <main className='min-h-screen py-10'>
           {children}
         </main>

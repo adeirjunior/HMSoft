@@ -13,11 +13,6 @@ if (!MONGO_URI || MONGO_URI.length === 0) {
   throw new Error("Please add your MongoDB URI to .env.local");
 }
 
-/**
- * Global is used here to maintain a cached connection across hot reloads
- * in development. This prevents connections from growing exponentially
- * during API Route usage.
- */
 let cached = global.mongoose;
 
 if (!cached) {
