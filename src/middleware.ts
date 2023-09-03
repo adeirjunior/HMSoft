@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { verifyJWT } from "@/lib/token";
 import { getErrorResponse } from "@/lib/helpers";
-import { middlewarePaths } from "@/utils";
 
 interface AuthenticatedRequest extends NextRequest {
   user: {
@@ -10,6 +9,7 @@ interface AuthenticatedRequest extends NextRequest {
 }
 
 let redirectToLogin = false;
+
 export async function middleware(req: NextRequest) {
   let token: string | undefined;
 
@@ -74,5 +74,11 @@ export async function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/profile", "/login", "/api/users/:path*", "/api/auth/logout", "/dashboard/:path*"],
+  matcher: [
+    "/profile",
+    "/login",
+    "/api/users/:path*",
+    "/api/auth/logout",
+    "/dashboard/:path*",
+  ],
 };
