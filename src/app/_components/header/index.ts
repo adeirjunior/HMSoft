@@ -1,1 +1,1 @@
-export { default as LoggedOutHeader } from '@/app/_components/header/LoggedOutHeader'
+export { default as LoggedOutHeader } from "@/app/_components/header/LoggedOutHeader";

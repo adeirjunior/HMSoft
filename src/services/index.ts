@@ -1,1 +1,7 @@
-export { addUser, getUser, getUsers, removeUser, updateUser } from '@/services/user.service'
+export {
+  addUser,
+  getUser,
+  getUsers,
+  removeUser,
+  updateUser,
+} from "@/services/user.service";

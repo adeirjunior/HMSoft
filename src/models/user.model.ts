@@ -1,35 +1,38 @@
-import mongoose, { Schema, model, models } from "mongoose"
-mongoose.Promise = global.Promise
+import mongoose, { Schema, model, models } from "mongoose";
+mongoose.Promise = global.Promise;
 
-const userSchema = new Schema({
+const userSchema = new Schema(
+  {
     name: String,
     username: {
-        type: String,
-        required: true,
-        unique: true
+      type: String,
+      required: true,
+      unique: true,
     },
     email: {
-        type: String,
-        required: true,
-        unique: true
+      type: String,
+      required: true,
+      unique: true,
     },
     password: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     phone: {
-        type: String,
-        unique: true
+      type: String,
+      unique: true,
     },
     website: String,
     cnpj: String,
     businessCreatedAt: Date,
     enabled: {
-        type: Boolean,
-        required: true
-    }
-},{timestamps: true})
+      type: Boolean,
+      required: true,
+    },
+  },
+  { timestamps: true }
+);
 
-const userModel = model('user', userSchema)
+const userModel = model("user", userSchema);
 
-export default models.user || userModel
+export default models.user || userModel;

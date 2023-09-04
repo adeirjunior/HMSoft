@@ -1,7 +1,7 @@
 export default function Home() {
   return (
-  <section className='grid place-content-center'>
-    <h2>Hello, World!</h2>
-  </section>
+    <section className='grid place-content-center'>
+      <h2>Hello, World!</h2>
+    </section>
   )
 }
