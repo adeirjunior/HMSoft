@@ -93,6 +93,24 @@ export default function Form() {
             </Link>
             </Label>
         </div>
+        <div className="flex items-center gap-2">
+            <Label
+            className="flex"
+            htmlFor="agree"
+            >
+            <p>
+                Alredy have an account?
+            </p>
+            <Link
+                className="text-cyan-600 hover:underline dark:text-cyan-500 ml-1"
+                href="/login"
+            >
+                <p>
+                Sign in
+                </p>
+            </Link>
+            </Label>
+        </div>
         <Button type="submit">
             Register new account
         </Button>
