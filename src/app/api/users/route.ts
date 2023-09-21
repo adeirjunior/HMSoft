@@ -1,23 +1,21 @@
-import { addUser, getUsers } from "@/services/user.service";
-import { UserType } from "@/types/User";
-import { NextResponse, NextRequest } from "next/server";
+import { getErrorResponse } from "@/lib/helpers";
+import { prisma } from "@/lib/prisma";
+import { NextRequest, NextResponse } from "next/server";
 
-export const GET = async () => {
-  try {
-    const users: UserType[] = await getUsers();
+export async function GET(req: NextRequest) {
+  const userId = req.headers.get("X-USER-ID");
 
-    return new NextResponse(JSON.stringify(users), { status: 200 });
-  } catch (error) {
-    return new NextResponse("Database Error", { status: 500 });
+  if (!userId) {
+    return getErrorResponse(
+      401,
+      "You are not logged in, please provide token to gain access"
+    );
   }
-};
 
-export const POST = async (request: NextRequest) => {
-  try {
-    const data: UserType = await request.json();
-    await addUser(data);
-    return new NextResponse(JSON.stringify(data), { status: 200 });
-  } catch (error) {
-    return new NextResponse(JSON.stringify(error), { status: 500 });
-  }
-};
+  const user = await prisma.user.findMany()
+
+  return NextResponse.json({
+    status: "success",
+    data: { user: { ...user, password: undefined } },
+  });
+}

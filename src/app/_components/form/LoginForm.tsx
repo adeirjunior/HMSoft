@@ -1,11 +1,32 @@
 'use client';
 
+import { UserType } from '@/types/User';
 import { Button, Label, TextInput } from 'flowbite-react';
 import Link from 'next/link';
+import { SubmitHandler, useForm } from 'react-hook-form';
 
 export default function Form() {
+    const {
+        register,
+        handleSubmit,
+    } = useForm<UserType>()
+
+    const OnSubmit: SubmitHandler<UserType> = (data) => {
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        const requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: JSON.stringify(data)
+        };
+
+        fetch('/api/auth/login', requestOptions)
+            .then(res => res.json())
+            .catch(err => console.log(err.message))
+    };
     return (
-        <form className="flex max-w-md flex-col gap-4">
+        <form onSubmit={handleSubmit(OnSubmit)} className="flex max-w-md flex-col gap-4">
             <div>
                 <div className="mb-2 block">
                     <Label
@@ -15,27 +36,28 @@ export default function Form() {
                 </div>
                 <TextInput
                     addon="@"
-                    id="username3"
+                    id="username"
                     placeholder="Bonnie Green"
+                    {...register("username", { required: true })}
                 />
             </div>
             <div>
                 <div className="mb-2 block">
                     <Label
-                        htmlFor="password2"
+                        htmlFor="password"
                         value="Your password"
                     />
                 </div>
                 <TextInput
-                    id="password2"
+                    id="password"
                     shadow
                     type="password"
+                    {...register("password", { required: true })}
                 />
             </div>
             <div className="flex items-center gap-2">
                 <Label
                     className="flex"
-                    htmlFor="agree"
                 >
                     <p>
                         Don&apos;t have an account?
@@ -56,5 +78,3 @@ export default function Form() {
         </form>
     )
 }
-
-

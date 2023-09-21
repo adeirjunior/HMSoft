@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@prisma/client": "^5.2.0",
     "@typegoose/typegoose": "^11.4.1",
     "bcryptjs": "^2.4.3",
     "clsx": "^2.0.0",

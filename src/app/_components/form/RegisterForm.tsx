@@ -26,9 +26,9 @@ export default function Form() {
             body: JSON.stringify(data)
         };
 
-        fetch('/api/users', requestOptions)
+        fetch('/api/auth/register', requestOptions)
             .then(res => res.json())
-            .catch(err => console.log(err.message))
+            .catch(err => console.log(err))
     };
     return (
         <form onSubmit={handleSubmit(OnSubmit)} className="flex max-w-md flex-col gap-4">
@@ -41,7 +41,7 @@ export default function Form() {
                 </div>
                 <TextInput
                     addon="@"
-                    id="username3"
+                    id="username"
                     placeholder="Bonnie Green"
                     {...register("username", { required: true })}
                 />
@@ -55,7 +55,7 @@ export default function Form() {
                 </div>
                 <TextInput
                     icon={HiMail}
-                    id="email3"
+                    id="email"
                     placeholder="bonnie@example.com"
                     {...register("email", { required: true })}
                 />
@@ -63,15 +63,29 @@ export default function Form() {
             <div>
                 <div className="mb-2 block">
                     <Label
-                        htmlFor="password2"
+                        htmlFor="password"
                         value="Your password"
                     />
                 </div>
                 <TextInput
-                    id="password2"
+                    id="password"
                     shadow
                     type="password"
                     {...register("password", { required: true })}
+                />
+            </div>
+            <div>
+                <div className="mb-2 block">
+                    <Label
+                        htmlFor="passwordConfirm"
+                        value="Your password again"
+                    />
+                </div>
+                <TextInput
+                    id="passwordConfirm"
+                    shadow
+                    type="password"
+                    {...register("passwordConfirm", { required: true })}
                 />
             </div>
             <div className="flex items-center gap-2">
@@ -85,7 +99,7 @@ export default function Form() {
                     </p>
                     <Link
                         className="text-cyan-600 hover:underline dark:text-cyan-500 ml-1"
-                        href="/forms"
+                        href="/terms"
                     >
                         <p>
                             terms and conditions
@@ -96,7 +110,6 @@ export default function Form() {
             <div className="flex items-center gap-2">
                 <Label
                     className="flex"
-                    htmlFor="agree"
                 >
                     <p>
                         Alredy have an account?

@@ -12,16 +12,16 @@ export default function FooterSitemapLinks() {
           <div>
             <Footer.Title title="Company" />
             <Footer.LinkGroup col>
-              <Footer.Link href="#">
+              <Footer.Link href="/about">
                 About
               </Footer.Link>
-              <Footer.Link href="#">
+              <Footer.Link href="/carrers">
                 Careers
               </Footer.Link>
-              <Footer.Link href="#">
+              <Footer.Link href="/brand">
                 Brand Center
               </Footer.Link>
-              <Footer.Link href="#">
+              <Footer.Link href="https://blog.hmsoft.co">
                 Blog
               </Footer.Link>
             </Footer.LinkGroup>
@@ -46,13 +46,13 @@ export default function FooterSitemapLinks() {
           <div>
             <Footer.Title title="legal" />
             <Footer.LinkGroup col>
-              <Footer.Link href="#">
+              <Footer.Link href="/legal/privacy">
                 Privacy Policy
               </Footer.Link>
-              <Footer.Link href="#">
+              <Footer.Link href="/legal/license">
                 Licensing
               </Footer.Link>
-              <Footer.Link href="#">
+              <Footer.Link href="/legal/terms">
                 Terms & Conditions
               </Footer.Link>
             </Footer.LinkGroup>
@@ -60,16 +60,16 @@ export default function FooterSitemapLinks() {
           <div>
             <Footer.Title title="download" />
             <Footer.LinkGroup col>
-              <Footer.Link href="#">
+              <Footer.Link href="/download/ios">
                 iOS
               </Footer.Link>
-              <Footer.Link href="#">
+              <Footer.Link href="/download/android">
                 Android
               </Footer.Link>
-              <Footer.Link href="#">
+              <Footer.Link href="/download/windows">
                 Windows
               </Footer.Link>
-              <Footer.Link href="#">
+              <Footer.Link href="/download/macos">
                 MacOS
               </Footer.Link>
             </Footer.LinkGroup>

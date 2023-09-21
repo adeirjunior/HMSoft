@@ -3,6 +3,7 @@ export type UserType = {
   username: String;
   email: String;
   password: String;
+  passwordConfirm: String;
   phone?: String;
   website?: String;
   cnpj?: String;
