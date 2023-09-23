@@ -1,17 +1,24 @@
 'use client';
 
-import { UserType } from '@/types/User';
+import { UserWithPass } from '@/types/User';
 import { Button, Label, TextInput } from 'flowbite-react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import LoadingDots from '../LoadingDots';
+import toast from 'react-hot-toast';
+import { useState } from 'react';
 
 export default function Form() {
     const {
         register,
         handleSubmit,
-    } = useForm<UserType>()
+    } = useForm<UserWithPass>()
+    const router = useRouter();
+    const [loading, setLoading] = useState(false);
 
-    const OnSubmit: SubmitHandler<UserType> = (data) => {
+    const OnSubmit: SubmitHandler<UserWithPass> = (data) => {
+        setLoading(true);
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
@@ -22,8 +29,16 @@ export default function Form() {
         };
 
         fetch('/api/auth/login', requestOptions)
-            .then(res => res.json())
-            .catch(err => console.log(err.message))
+            .then((res) => res.json())
+            .then(() => {
+                setLoading(false);
+                router.refresh()
+                router.push("profile")
+            })
+            .catch(err => {
+                toast.error(err.message);
+                console.log(err)
+            })
     };
     return (
         <form onSubmit={handleSubmit(OnSubmit)} className="flex max-w-md flex-col gap-4">
@@ -72,8 +87,12 @@ export default function Form() {
                     </Link>
                 </Label>
             </div>
-            <Button type="submit">
-                Login
+            <Button disabled={loading} type="submit">
+                {loading ? (
+                    <LoadingDots color="#eeeeee" />
+                ) : (
+                    <p>Login</p>
+                )}
             </Button>
         </form>
     )

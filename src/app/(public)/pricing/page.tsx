@@ -1,7 +1,9 @@
+import { Grid } from "@/app/_components/pricing";
+
 export default function Pricing() {
   return (
     <section className='grid place-content-center'>
-      <h2>Pricing</h2>
+      <Grid/>
     </section>
   )
 }

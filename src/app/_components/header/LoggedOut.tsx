@@ -1,10 +1,10 @@
 'use client'
 
-import navPaths from '@/utils/navPaths'
+import {loggedOutNavPaths} from '@/utils/navPaths'
 import { Navbar } from 'flowbite-react'
 import { usePathname } from 'next/navigation'
 
-const Header = () => {
+const LoggedOut = () => {
   const currentPath = usePathname()
 
   return (
@@ -21,7 +21,7 @@ const Header = () => {
       </Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse>
-        {navPaths.map((path, index) => {
+        {loggedOutNavPaths.map((path, index) => {
           const isActive = currentPath === path.href
           return (
             <Navbar.Link
@@ -40,4 +40,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default LoggedOut

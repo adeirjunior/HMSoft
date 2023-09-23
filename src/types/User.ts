@@ -1,12 +1,27 @@
-export type UserType = {
-  name?: String;
-  username: String;
-  email: String;
-  password: String;
-  passwordConfirm: String;
-  phone?: String;
-  website?: String;
-  cnpj?: String;
-  businessCreatedAt?: Date;
-  enabled: Boolean;
-};
+export interface CurrentUser {
+  status: string
+  data: Data
+}
+
+export interface Data {
+  user: User
+}
+
+export interface User {
+  id: string
+  email: string
+  name: any
+  username: string
+  cnpj: any
+  website: any
+  phone: any
+  role: string
+  photo: string
+  verified: boolean
+  createdAt: string
+  updatedAt: string
+}
+
+export interface UserWithPass extends User {
+  password: string
+}

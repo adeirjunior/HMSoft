@@ -5,6 +5,8 @@ import { HiMail } from 'react-icons/hi';
 import Link from 'next/link'
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { UserType } from '@/types/User';
+import toast from 'react-hot-toast';
+import { useRouter } from 'next/navigation';
 
 interface FormInterface extends UserType {
     agree: boolean
@@ -15,6 +17,7 @@ export default function Form() {
         register,
         handleSubmit,
     } = useForm<FormInterface>()
+    const router = useRouter();
 
     const OnSubmit: SubmitHandler<FormInterface> = (data) => {
         const myHeaders = new Headers();
@@ -27,7 +30,13 @@ export default function Form() {
         };
 
         fetch('/api/auth/register', requestOptions)
-            .then(res => res.json())
+            .then((res) => res.json())
+            .then(() => {
+                toast.success("Account created! Redirecting to login...");
+                setTimeout(() => {
+                    router.push("/login");
+                }, 2000)
+            })
             .catch(err => console.log(err))
     };
     return (

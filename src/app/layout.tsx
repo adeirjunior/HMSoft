@@ -1,10 +1,13 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { LoggedOutHeader } from '@/app/_components/header'
+import { LoggedOut, LoggedIn } from '@/app/_components/header'
 import Footer from '@/app/_components/Footer'
+import isLogged from '@/lib/isLogged'
 
 const inter = Inter({ subsets: ['latin'] })
+
+export const revalidate = 3600
 
 export const metadata: Metadata = {
   title: 'HMSoft',
@@ -19,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <LoggedOutHeader />
+        {isLogged() ? <LoggedIn/> : <LoggedOut />}
         <main className='min-h-screen py-10'>
           {children}
         </main>
