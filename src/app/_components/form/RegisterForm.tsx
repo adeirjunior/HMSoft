@@ -4,12 +4,13 @@ import { Button, Checkbox, Label, TextInput } from 'flowbite-react';
 import { HiMail } from 'react-icons/hi';
 import Link from 'next/link'
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { UserType } from '@/types/User';
+import { UserWithPass } from '@/types/User';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 
-interface FormInterface extends UserType {
+interface FormInterface extends UserWithPass {
     agree: boolean
+    passwordConfirm: string
 }
 
 export default function Form() {
