@@ -25,3 +25,8 @@ export interface User {
 export interface UserWithPass extends User {
   password: string
 }
+
+export interface UserRegisterForm extends UserWithPass {
+  agree: boolean
+  passwordConfirm: string
+}

@@ -4,23 +4,20 @@ import { Button, Checkbox, Label, TextInput } from 'flowbite-react';
 import { HiMail } from 'react-icons/hi';
 import Link from 'next/link'
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { UserWithPass } from '@/types/User';
+import { UserRegisterForm, UserWithPass } from '@/types/User';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 
-interface FormInterface extends UserWithPass {
-    agree: boolean
-    passwordConfirm: string
-}
+
 
 export default function Form() {
     const {
         register,
         handleSubmit,
-    } = useForm<FormInterface>()
+    } = useForm<UserRegisterForm>()
     const router = useRouter();
 
-    const OnSubmit: SubmitHandler<FormInterface> = (data) => {
+    const OnSubmit: SubmitHandler<UserRegisterForm> = (data) => {
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
