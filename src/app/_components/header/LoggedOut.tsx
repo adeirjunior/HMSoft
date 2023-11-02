@@ -1,6 +1,6 @@
 'use client'
 
-import {loggedOutNavPaths} from '@/utils/navPaths'
+import {loggedOutNavPaths} from '@/utils'
 import { Navbar } from 'flowbite-react'
 import { usePathname } from 'next/navigation'
 

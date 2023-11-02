@@ -1,6 +1,6 @@
 'use client';
 
-import { pricingCardChecks } from '@/utils/pricingCardChecks';
+import { pricingCardChecks } from '@/utils';
 import { Card } from 'flowbite-react';
 import { BsFillCheckCircleFill } from 'react-icons/bs'
 import { IconContext } from 'react-icons'

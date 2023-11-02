@@ -1,7 +1,7 @@
 'use client'
 
-import { loggedInNavPaths } from '@/utils/navPaths'
-import { Navbar, Avatar, Dropdown } from 'flowbite-react'
+import { loggedInNavPaths } from '@/utils'
+import { Navbar, Dropdown } from 'flowbite-react'
 import { usePathname, useRouter } from 'next/navigation'
 import {RxDashboard} from 'react-icons/rx'
 import {AiOutlineSetting, AiOutlineDollar} from 'react-icons/ai'
