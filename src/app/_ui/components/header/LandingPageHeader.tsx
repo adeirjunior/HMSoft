@@ -36,10 +36,12 @@ export default function LandingPageHeader() {
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
-        <NavbarBrand color="foreground" as={Link} href="/" className="gap-3">
-          <Image src="/hmsoft.svg" alt="Next.js Logo" width={32} />
-          <p className="font-bold text-4xl">HMSoft</p>
-        </NavbarBrand>
+        <Link color="foreground" href="/">
+          <NavbarBrand className="gap-3">
+            <Image src="/hmsoft.svg" alt="Next.js Logo" width={32} />
+            <p className="font-bold text-4xl">HMSoft</p>
+          </NavbarBrand>
+        </Link>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
@@ -55,7 +57,9 @@ export default function LandingPageHeader() {
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
-        <NavbarItem><ThemeSwitcher/></NavbarItem>
+        <NavbarItem>
+          <ThemeSwitcher />
+        </NavbarItem>
         <NavbarItem className="hidden lg:flex">
           <Link href="login">Login</Link>
         </NavbarItem>
