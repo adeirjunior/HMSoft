@@ -8,10 +8,10 @@ export default function LandingLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className="min-h-screen flex-col items-center justify-between p-24 relative flex place-items-center">
+    <main className="min-h-screen flex-col items-center justify-between p-6 sm:p-12 lg:p-24 relative flex place-items-center">
       <LandingPageHeader />
       {children}
-      <CardArray/>
+      <CardArray />
     </main>
   );
 }

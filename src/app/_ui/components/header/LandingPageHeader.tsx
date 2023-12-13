@@ -19,16 +19,10 @@ import { ThemeSwitcher } from "../ThemeSwitcher";
 export default function LandingPageHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
+    "Services",
+    "Pricing",
+    "Log In",
+    "Sign Up",
   ];
   return (
     <Navbar className="fixed" isBordered onMenuOpenChange={setIsMenuOpen}>
@@ -38,8 +32,7 @@ export default function LandingPageHeader() {
           className="sm:hidden"
         />
           <NavbarBrand as={Link} href="/" className="gap-3">
-            <Image src="/hmsoft.svg" alt="Next.js Logo" width={32} />
-            <p className="font-bold text-4xl">HMSoft</p>
+            <p className="font-bold text-2xl sm:text-4xl">HMSoft</p>
           </NavbarBrand>
       </NavbarContent>
 
@@ -63,7 +56,7 @@ export default function LandingPageHeader() {
           <UILink href="login">Login</UILink>
         </NavbarItem>
         <NavbarItem>
-          <Button as={Link} color="primary" href="signin" variant="flat">
+          <Button as={Link} color="primary" href="signup" variant="flat">
             Sign Up
           </Button>
         </NavbarItem>
@@ -80,7 +73,7 @@ export default function LandingPageHeader() {
                   : "foreground"
               }
               className="w-full"
-              href="#"
+              href={item.trim().toLowerCase().replace(" ", "")}
               size="lg"
             >
               {item}

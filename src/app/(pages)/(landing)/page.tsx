@@ -4,10 +4,10 @@ import { MdArrowOutward } from "react-icons/md";
 export default function Home() {
   return (
     <>
-      <section className="flex py-16">
+      <section className="flex flex-col sm:flex-row py-16">
         <div className="flex flex-col gap-8">
           <Chip color="primary">The hospitality app lodge</Chip>
-          <h2 className="text-6xl font-bold">
+          <h2 className="text-5xl sm:text-6xl font-bold">
             A decade of smarter teams and happier visitors
           </h2>
           <Button
@@ -19,18 +19,18 @@ export default function Home() {
             Look at that
           </Button>
         </div>
-        <div className="relative p-5">
+        <div className="flex justify-center items-center sm:relative p-5">
           <Image
             isBlurred
+            className="hidden sm:block"
             alt="MHSoft Dashboard PC"
             width={800}
             src="/dashboardPC.png"
           />
           <Image
             isBlurred
-            className="absolute -bottom-16"
+            className="sm:absolute sm:-bottom-16"
             alt="MHSoft Dashboard Mobile"
-            width={200}
             src="/dashboardMobile.png"
           />
         </div>
