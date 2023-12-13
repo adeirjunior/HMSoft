@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Hotel Management Software (HMSoft)
+
+This is an ongoing project for a Hotel Management System developed using NestJS, MongoDB, and GraphQL. The system is designed to streamline hotel administration tasks, providing features for user registration and hotel registration.
+
+## Features
+
+- **User Registration**: Users can register with the system, providing their personal information and credentials.
+
+- **Hotel Registration**: Registered users can create and register their hotels, providing details such as hotel name, location, amenities, and room types.
+
+- **Authentication and Authorization**: The system supports user authentication and authorization, ensuring secure access to registered features.
+
+Please note that the project is still under development, and additional features will be implemented in future updates.
+
+## Technologies Used
+
+- **NestJS**: A scalable and efficient Node.js framework for building server-side applications, leveraging RESTful and GraphQL architectural principles.
+
+- **MongoDB**: A highly flexible and scalable NoSQL database, suitable for storing hotel-related data such as user information, hotels, and more.
+
+- **GraphQL**: A query language and data manipulation language that offers an efficient approach to client-server communication, enabling flexible and specific queries.
 
 ## Getting Started
 
-First, run the development server:
+To set up the project locally and run the existing functionality, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Ensure that you have Node.js and npm (or yarn) installed on your machine.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Clone this repository to your chosen directory using the following command:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   ```bash
+   git clone https://github.com/adeirjunior/hms.git
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. Navigate to the project directory:
 
-## Learn More
+   ```bash
+   cd hms
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+4. Install project dependencies:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   npm install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   or
 
-## Deploy on Vercel
+   ```bash
+   yarn install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+5. Configure the necessary environment variables, such as database connection information, API keys, etc. You can use the `.env.example` file as a reference.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+6. Start the development server:
+
+   ```bash
+   npm run start:dev
+   ```
+
+   or
+
+   ```bash
+   yarn start:dev
+   ```
+
+7. The server will start on `http://localhost:3000`. You can test the user registration and hotel registration features using appropriate GraphQL queries.
+
+## Contribution
+
+As the project is still under development, contributions are welcome! Feel free to contribute by implementing new features, fixing bugs, or improving existing functionality. Follow these steps to contribute:
+
+1. Fork this repository.
+
+2. Create a branch for your new feature or bug fix:
+
+   ```bash
+   git checkout -b your-branch-name
+   ```
+
+3. Make the desired changes and commit:
+
+   ```bash
+   git commit -m "Description of your changes"
+   ```
+
+4. Push your changes to the remote repository:
+
+   ```bash
+   git push origin your-branch-name
+   ```
+
+5. Open a pull request in the original repository, describing your changes and the intended improvements.
+
+Your contributions will be appreciated in advancing the project!
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
