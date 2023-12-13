@@ -1,38 +1,72 @@
-import { Link, Button, Image, Chip } from "@nextui-org/react";
-import { MdArrowOutward } from "react-icons/md";
+import { Link, Button, Image, Chip, Card } from "@nextui-org/react";
+import { MdArrowOutward, Md123 } from "react-icons/md";
 
 export default function Home() {
   return (
     <>
-      <section className="flex flex-col sm:flex-row py-16">
-        <div className="flex flex-col gap-8">
-          <Chip color="primary">The hospitality app lodge</Chip>
-          <h2 className="text-5xl sm:text-6xl font-bold">
+      <section className="flex flex-1 flex-col justify-between sm:flex-row py-16">
+        <div className="flex flex-col gap-8 sm:max-w-xs md:max-w-lg lg:max-w-3xl">
+          <Chip color="primary" variant="flat">The hospitality app lodge</Chip>
+          <h1 className="text-5xl sm:text-6xl xl:text-8xl font-bold">
             A decade of smarter teams and happier visitors
-          </h2>
+          </h1>
           <Button
             as={Link}
-            href="signin"
+            href="signup"
+            color="primary"
             endContent={<MdArrowOutward />}
             className="w-full py-6"
           >
             Look at that
           </Button>
         </div>
-        <div className="flex justify-center items-center sm:relative p-5">
+        <div className="p-5">
           <Image
             isBlurred
-            className="hidden sm:block"
+            className="hidden lg:block"
             alt="MHSoft Dashboard PC"
-            width={800}
+            width={700}
             src="/dashboardPC.png"
           />
           <Image
             isBlurred
-            className="sm:absolute sm:-bottom-16"
+            className="lg:hidden"
             alt="MHSoft Dashboard Mobile"
             src="/dashboardMobile.png"
           />
+        </div>
+      </section>
+      <section className="w-full justify-between flex flex-col xl:flex-row">
+        <div className="flex flex-col gap-8 max-w-lg">
+          <h1 className="text-5xl font-bold">
+            We do our best facilities provide you
+          </h1>
+          <p className="p-4">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry&apos;s standard dummy
+          </p>
+          <Button
+            as={Link}
+            href="signup"
+            endContent={<MdArrowOutward />}
+            className="py-6"
+            color="primary"
+          >
+            Get Started
+          </Button>
+        </div>
+        <div className="w-fit grid grid-cols-2 xl:grid-cols-4">
+          {[...Array(8)].map((index) => {
+            return (
+              <Card
+                key={index}
+                className="w-48 h-48 rounded-none flex flex-col justify-center items-center"
+              >
+                <MdArrowOutward />
+                <p>Check In/Out</p>
+              </Card>
+            );
+          })}
         </div>
       </section>
     </>
