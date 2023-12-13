@@ -1,7 +1,5 @@
-import Link from "next/link";
-import { Button } from "@nextui-org/button";
+import { Link, Button, Image } from "@nextui-org/react";
 import { MdArrowOutward } from "react-icons/md";
-import Image from "next/image";
 
 export default function Home() {
   return (
@@ -14,45 +12,31 @@ export default function Home() {
           <h2 className="text-6xl font-bold">
             A decade of smarter teams and happier visitors
           </h2>
-          <Link href="signin">
-            <Button className="w-full font-bold py-6">
-              Look at that{" "}
-              <span>
-                <MdArrowOutward />
-              </span>
+            <Button
+            as={Link}
+              href="signin"
+              endContent={<MdArrowOutward />}
+              className="w-full font-bold py-6"
+            >
+              Look at that
             </Button>
-          </Link>
         </div>
         <div className="relative p-5">
           <Image
-            priority
-            className="w-[800px] h-auto"
+            isBlurred
             alt="MHSoft Dashboard PC"
-            width={400}
-            height={300}
+            width={800}
             src="/dashboardPC.png"
           />
           <Image
-            priority
+            isBlurred
             className="absolute -bottom-16"
             alt="MHSoft Dashboard Mobile"
             width={200}
-            height={600}
             src="/dashboardMobile.png"
           />
         </div>
       </section>
-      <div className="flex flex-col gap-4">
-        {(() => {
-          const arr = [];
-          for (let i = 0; i < 10; i++) {
-            arr.push(
-              <div key={i} className="border w-40 h-40 bg-slate-800"></div>
-            );
-          }
-          return arr;
-        })()}
-      </div>
     </>
   );
 }
