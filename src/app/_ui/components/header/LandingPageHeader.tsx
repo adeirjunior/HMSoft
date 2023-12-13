@@ -1,7 +1,7 @@
 "use client"
 
 import {
-  Link,
+  Link as UILink,
   Navbar,
   NavbarBrand,
   Image,
@@ -11,6 +11,7 @@ import {
   NavbarMenu,
   NavbarMenuItem,
 } from "@nextui-org/react";
+import Link from "next/link";
 import { Button } from "@nextui-org/button";
 import { useState } from "react";
 import { ThemeSwitcher } from "../ThemeSwitcher";
@@ -36,24 +37,22 @@ export default function LandingPageHeader() {
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
-        <Link color="foreground" href="/">
-          <NavbarBrand className="gap-3">
+          <NavbarBrand as={Link} href="/" className="gap-3">
             <Image src="/hmsoft.svg" alt="Next.js Logo" width={32} />
             <p className="font-bold text-4xl">HMSoft</p>
           </NavbarBrand>
-        </Link>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
-          <Link color="foreground" href="services">
+          <UILink color="foreground" href="services">
             Services
-          </Link>
+          </UILink>
         </NavbarItem>
         <NavbarItem isActive>
-          <Link href="pricing" aria-current="page">
+          <UILink href="pricing" aria-current="page">
             Pricing
-          </Link>
+          </UILink>
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
@@ -61,7 +60,7 @@ export default function LandingPageHeader() {
           <ThemeSwitcher />
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">
-          <Link href="login">Login</Link>
+          <UILink href="login">Login</UILink>
         </NavbarItem>
         <NavbarItem>
           <Button as={Link} color="primary" href="signin" variant="flat">
@@ -72,7 +71,7 @@ export default function LandingPageHeader() {
       <NavbarMenu>
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
+            <UILink
               color={
                 index === 2
                   ? "primary"
@@ -85,7 +84,7 @@ export default function LandingPageHeader() {
               size="lg"
             >
               {item}
-            </Link>
+            </UILink>
           </NavbarMenuItem>
         ))}
       </NavbarMenu>
