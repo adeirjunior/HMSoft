@@ -1,6 +1,6 @@
 # Hotel Management Software (HMSoft)
 
-This is an ongoing project for a Hotel Management System developed using NestJS, MongoDB, and GraphQL. The system is designed to streamline hotel administration tasks, providing features for user registration and hotel registration.
+This is an ongoing project for a Hotel Management System developed using Nextjs, MongoDB, and Prisma. The system is designed to streamline hotel administration tasks, providing features for user registration and hotel registration.
 
 ## Features
 
