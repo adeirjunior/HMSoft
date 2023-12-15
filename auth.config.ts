@@ -1,56 +1,24 @@
 import type { NextAuthConfig } from "next-auth";
-import GitHubProvider from "next-auth/providers/github";
-import CredentialsProvider from "next-auth/providers/credentials";
+import Credentials from "next-auth/providers/credentials";
+import GitHub from "next-auth/providers/github";
 
-export const authConfig: NextAuthConfig = {
+export default {
   providers: [
-    GitHubProvider({
-      clientId: process.env.GITHUB_ID!,
-      clientSecret: process.env.GITHUB_SECRET!,
-    }),
-
-    CredentialsProvider({
-      name: "Credentials",
+    GitHub,
+    Credentials({
       credentials: {
-        username: {
-          label: "Username:",
-          type: "text",
-          placeholder: "your-cool-username",
-        },
-        password: {
-          label: "Password:",
-          type: "password",
-          placeholder: "your-awesome-password",
-        },
+        username: { label: "Username" },
+        password: { label: "Password", type: "password" },
       },
-      async authorize(credentials) {
-        const user = { id: "001", name: "nextjsdev", password: "12345678" };
-
-        if (
-          credentials?.username === user.name &&
-          credentials?.password === user.password
-        ) {
-          return user;
-        } else {
-          return null;
-        }
+      authorize: async (
+        credentials: Partial<Record<"username" | "password", unknown>>,
+        request: Request
+      ) => {
+        // Your authorization logic here
+        const response = await fetch(request);
+        if (!response.ok) return null;
+        return (await response.json()) ?? null;
       },
     }),
   ],
-  pages: {
-    signIn: "/login",
-  },
-  callbacks: {
-    authorized({ auth, request: { nextUrl } }) {
-      const isLoggedIn = !!auth?.user;
-      const isOnDashboard = nextUrl.pathname.startsWith("/dashboard");
-      if (isOnDashboard) {
-        if (isLoggedIn) return true;
-        return false; // Redirect unauthenticated users to login page
-      } else if (isLoggedIn) {
-        return Response.redirect(new URL("/dashboard", nextUrl));
-      }
-      return true;
-    },
-  },
-};
+} as NextAuthConfig;

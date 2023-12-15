@@ -1,54 +1,11 @@
 import NextAuth from "next-auth";
-import Credentials from "next-auth/providers/credentials";
-import { authConfig } from "./../../auth.config";
-import { z } from "zod";
-import type { User } from "@/lib/definitions/user.definitions";
-import bcrypt from "bcrypt";
+import { PrismaAdapter } from "@auth/prisma-adapter";
+import authConfig from "./../../auth.config";
 import { prisma } from "./utils/prisma";
 
-async function getUser(email: string): Promise<User | undefined | null> {
-  try {
-    const user = await prisma.users.findUnique({ where: { email } });
-    return user;
-  } catch (error) {
-    console.error("Failed to fetch user:", error);
-    throw new Error("Failed to fetch user.");
-  }
-}
-
-export const { auth, signIn, signOut } = NextAuth({
+export const { handlers, auth } = NextAuth({
+  adapter: PrismaAdapter(prisma),
+  session: { strategy: "jwt" },
+  
   ...authConfig,
-  providers: [
-    Credentials({
-      name: "Credentials",
-      credentials: {
-        username: {
-          label: "Username",
-          type: "text",
-          placeholder: "jsmith"
-        },
-        password: {
-          label: "Password",
-          type: "password"
-        }
-      },
-      async authorize(credentials, req) {
-        const parsedCredentials = z
-          .object({ email: z.string().email(), password: z.string().min(6) })
-          .safeParse(credentials);
-
-        if (parsedCredentials.success) {
-          const { email, password } = parsedCredentials.data;
-          const user = await getUser(email);
-          if (!user) return null;
-          const passwordsMatch = await bcrypt.compare(password, user.password);
-
-          if (passwordsMatch) return user;
-        }
-
-        console.log("Invalid credentials");
-        return null;
-      }
-    }),
-  ],
 });
