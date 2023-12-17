@@ -4,7 +4,7 @@ import { MdArrowOutward, Md123 } from "react-icons/md";
 export default function Home() {
   return (
     <>
-      <section className="flex flex-1 flex-col justify-between sm:flex-row py-16">
+      <main className="flex flex-1 flex-col justify-between sm:flex-row pb-16 sm:py-16">
         <div className="flex flex-col gap-8 sm:max-w-xs md:max-w-lg lg:max-w-3xl">
           <Chip color="primary" variant="flat">The hospitality app lodge</Chip>
           <h1 className="text-5xl sm:text-6xl xl:text-8xl font-bold">
@@ -35,7 +35,7 @@ export default function Home() {
             src="/dashboardMobile.png"
           />
         </div>
-      </section>
+      </main>
       <section className="w-full justify-between flex flex-col xl:flex-row">
         <div className="flex flex-col gap-8 max-w-lg">
           <h1 className="text-5xl font-bold">

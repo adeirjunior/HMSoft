@@ -6,9 +6,9 @@ export default function LandingLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className="min-h-screen flex-col items-center justify-between p-24 relative flex place-items-center">
+    <div className="min-h-screen flex-col items-center justify-between p-24 pt-20 relative flex place-items-center">
       <LandingPageHeader />
       {children}
-    </main>
+    </div>
   );
 }
