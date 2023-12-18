@@ -46,7 +46,7 @@ const valueFormatter = (number: number | bigint) =>
 export default function TadaySales() {
   const [selectedComparison, setSelectedComparison] = useState("average");
   return (
-    <Card className="max-w-md mx-auto">
+    <Card className="max-w-md">
       <Text>Today&apos;s Sales</Text>
       <Metric className="mt-1">$ 276</Metric>
       <TabGroup>
