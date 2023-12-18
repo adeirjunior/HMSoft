@@ -1,41 +1,57 @@
-import { getUser } from "@/lib/fetches/user.fetches";
 import type { NextAuthConfig } from "next-auth";
-import Credentials from "next-auth/providers/credentials";
-import GitHub from "next-auth/providers/github";
-import { z } from "zod";
-import bcrypt from "bcrypt"
+import GitHubProvider from "next-auth/providers/github";
+import CredentialsProvider from "next-auth/providers/credentials";
 
-export default {
+export const authConfig: NextAuthConfig = {
   providers: [
-    GitHub,
-    Credentials({
-      async authorize(
-        credentials: Partial<Record<"email" | "password", string>>,
-        request: Request
-      ) {
-        const parsedCredentials = z
-          .object({ email: z.string().email(), password: z.string().min(6) })
-          .safeParse(credentials);
+    GitHubProvider({
+      clientId: process.env.GITHUB_ID!,
+      clientSecret: process.env.GITHUB_SECRET!,
+    }),
 
-        if (parsedCredentials.success) {
-          const { email, password } = parsedCredentials.data;
-          const user = await getUser(email);
+    CredentialsProvider({
+      name: "Credentials",
+      credentials: {
+        username: {
+          label: "Username:",
+          type: "text",
+          placeholder: "your-cool-username",
+        },
+        password: {
+          label: "Password:",
+          type: "password",
+          placeholder: "your-awesome-password",
+        },
+      },
+      async authorize(credentials) {
+        const user = { id: "001", name: "nextjsdev", password: "12345678" };
 
-          if (user && "password" in user) {
-            const passwordsMatch = await bcrypt.compare(
-              password,
-              user.password
-            );
-
-            if (passwordsMatch) {
-              return user;
-            }
-          }
+        if (
+          credentials?.username === user.name &&
+          credentials?.password === user.password
+        ) {
+          return user;
+        } else {
+          return null;
         }
-
-        console.log("Invalid credentials");
-        return null;
       },
     }),
   ],
-} as NextAuthConfig;
+  pages: {
+    signIn: "/login",
+    newUser: "/"
+  },
+  callbacks: {
+    authorized({ auth, request: { nextUrl } }) {
+      const isLoggedIn = !!auth?.user;
+      const isOnDashboard = nextUrl.pathname.startsWith("/dashboard");
+      if (isOnDashboard) {
+        if (isLoggedIn) return true;
+        return false; // Redirect unauthenticated users to login page
+      } else if (isLoggedIn) {
+        return Response.redirect(new URL("/dashboard", nextUrl));
+      }
+      return true;
+    },
+  },
+};

@@ -10,14 +10,14 @@ import { ArrowRightIcon } from "@heroicons/react/20/solid";
 import { Button } from "./../button";
 import { useFormState, useFormStatus } from "react-dom";
 import { createUser } from "@/lib/actions/user.actions";
-import { Card, Link } from "@nextui-org/react";
+import { Card, Checkbox, Link } from "@nextui-org/react";
 
 export default function SignupForm() {
   const initialState = { message: null, errors: {} };
   const [state, action] = useFormState(createUser, initialState);
 
   return (
-    <form action={action} className="space-y-3">
+    <form action={action} className="space-y-3 max-w-3xl m-auto">
       <Card className="flex-1 rounded-lg px-6 pb-4 pt-8">
         <h1 className={`${lusitana.className} mb-3 text-2xl`}>
           Please sign up to continue.
@@ -120,6 +120,17 @@ export default function SignupForm() {
               />
               <KeyIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
             </div>
+          </div>
+          <div className="mt-4">
+            <Checkbox required>
+              I agree with the{" "}
+              <Link
+                className="hover:underline ml-1"
+                href="/terms"
+              >
+                terms and conditions
+              </Link>
+            </Checkbox>
           </div>
           {state.errors?.password ? (
             <div className="flex h-8 items-end space-x-1">
