@@ -1,7 +1,4 @@
-import { Link } from '@nextui-org/react';
-import NavLinks from '@/app/_ui/components/dashboard/nav-links';
-import { PowerIcon } from '@heroicons/react/24/outline';
-import { signOut } from '@/lib/auth';
+import NavLinks from '@/_ui/components/dashboard/nav-links';
 
 export default function SideNav() {
   return (

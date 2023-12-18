@@ -3,9 +3,9 @@ import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import {authConfig} from "./../../auth.config";
 import { z } from "zod";
-import type { User } from "@/lib/definitions/user.definitions";
+import type { User } from "@/_lib/definitions/user.definitions";
 import bcrypt from "bcrypt";
-import { prisma } from "./utils/prisma";
+import { prisma } from "@/_lib/utils/prisma";
 
 async function getUser(email: string): Promise<User | undefined | null> {
   try {

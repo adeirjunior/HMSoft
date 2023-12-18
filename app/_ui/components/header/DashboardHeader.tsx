@@ -4,11 +4,6 @@ import {
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  Dropdown,
-  DropdownTrigger,
-  Avatar,
-  DropdownMenu,
-  DropdownItem,
 } from "@nextui-org/react";
 import Link from "next/link";
 import { ThemeSwitcher } from "../ThemeSwitcher";

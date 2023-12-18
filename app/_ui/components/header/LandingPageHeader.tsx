@@ -15,7 +15,7 @@ import { Button } from "@nextui-org/button";
 import { useState } from "react";
 import { ThemeSwitcher } from "../ThemeSwitcher";
 import { usePathname } from "next/navigation";
-import { menuItems, mobileMenuItems } from "@/lib/utils/menuItems";
+import { menuItems, mobileMenuItems } from "@/_lib/utils/menuItems";
 
 export default function LandingPageHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

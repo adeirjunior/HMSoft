@@ -1,6 +1,6 @@
 "use client"
 
-import { columns, rows } from "@/lib/utils/pricingTableDifferences";
+import { columns, rows } from "@/_lib/utils/pricingTableDifferences";
 import {
   Table,
   TableHeader,

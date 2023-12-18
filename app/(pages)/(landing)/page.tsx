@@ -1,5 +1,5 @@
 import { Link, Button, Image, Chip, Card } from "@nextui-org/react";
-import { MdArrowOutward, Md123 } from "react-icons/md";
+import { MdArrowOutward } from "react-icons/md";
 
 export default function Home() {
   return (

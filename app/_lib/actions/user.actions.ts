@@ -1,9 +1,9 @@
 "use server";
 
 import { genSaltSync, hashSync } from "bcrypt";
-import { UserState } from "../definitions/user.definitions";
-import { createUserQuery } from "../queries/user.queries";
-import { CreateUserSchema as CreateUser } from "../schemas/user.schema";
+import { UserState } from "@/_lib/definitions/user.definitions";
+import { createUserQuery } from "@/_lib/queries/user.queries";
+import { CreateUserSchema as CreateUser } from "@/_lib/schemas/user.schema";
 import { redirect } from "next/navigation";
 
 export async function createUser(

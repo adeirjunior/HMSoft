@@ -1,5 +1,5 @@
-import PricingTable from "@/app/_ui/components/table/PricingTable"
-import PricingTableDiferences from "@/app/_ui/components/table/PricingTableDiferences"
+import PricingTable from "@/_ui/components/table/PricingTable"
+import PricingTableDiferences from "@/_ui/components/table/PricingTableDiferences"
 
 export default function Pricing() {
   return <><main

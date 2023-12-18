@@ -1,6 +1,6 @@
-import GoBackwardButton from "@/app/_ui/components/button/GoBackwardButton";
-import SideNav from "@/app/_ui/components/dashboard/sidenav";
-import DashboardHeader from "@/app/_ui/components/header/DashboardHeader";
+import GoBackwardButton from "@/_ui/components/button/GoBackwardButton";
+import SideNav from "@/_ui/components/dashboard/sidenav";
+import DashboardHeader from "@/_ui/components/header/DashboardHeader";
 
 export default function NotFound() {
   return <>

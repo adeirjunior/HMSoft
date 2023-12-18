@@ -1,6 +1,6 @@
 "use client";
 
-import { lusitana } from "@/app/_ui/fonts";
+import { lusitana } from "@/_ui/fonts";
 import {
   AtSymbolIcon,
   ExclamationCircleIcon,
@@ -9,7 +9,7 @@ import {
 import { ArrowRightIcon } from "@heroicons/react/20/solid";
 import { Button } from "./../button";
 import { useFormState, useFormStatus } from "react-dom";
-import { createUser } from "@/lib/actions/user.actions";
+import { createUser } from "@/_lib/actions/user.actions";
 import { Card, Checkbox, Link } from "@nextui-org/react";
 
 export default function SignupForm() {

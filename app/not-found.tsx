@@ -1,6 +1,6 @@
 
-import GoBackwardButton from "./_ui/components/button/GoBackwardButton";
-import LandingPageHeader from "./_ui/components/header/LandingPageHeader";
+import GoBackwardButton from "@/_ui/components/button/GoBackwardButton";
+import LandingPageHeader from "@/_ui/components/header/LandingPageHeader";
 
 
 export default function NotFound() {

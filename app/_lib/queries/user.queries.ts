@@ -1,5 +1,5 @@
-import { CreateUserQueryType } from "@/lib/definitions/user.definitions";
-import { prisma } from "../utils/prisma";
+import { CreateUserQueryType } from "@/_lib/definitions/user.definitions";
+import { prisma } from "@/_lib/utils/prisma";
 
 export const createUserQuery = async ({
   username,

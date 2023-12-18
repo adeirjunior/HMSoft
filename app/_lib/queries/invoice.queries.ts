@@ -1,8 +1,8 @@
-import { prisma } from "../utils/prisma";
+import { prisma } from "@/_lib/utils/prisma";
 import {
   CreateInvoiceQueryType,
   UpdateInvoiceQueryType,
-} from "../definitions/invoice.definitions";
+} from "@/_lib/definitions/invoice.definitions";
 
 export const createInvoiceQuery = async ({
   customerId,

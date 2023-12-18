@@ -1,6 +1,6 @@
-import Revenue from "@/app/_ui/components/dashboard/revenue";
+import Revenue from "@/_ui/components/dashboard/revenue";
 import { BreadcrumbItem, Breadcrumbs } from "@nextui-org/react";
-import TodaySales from "@/app/_ui/components/dashboard/today-sales"
+import TodaySales from "@/_ui/components/dashboard/today-sales"
 
 export default function page() {
   return (

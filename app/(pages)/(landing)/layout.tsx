@@ -1,4 +1,4 @@
-import LandingPageHeader from "@/app/_ui/components/header/LandingPageHeader";
+import LandingPageHeader from "@/_ui/components/header/LandingPageHeader";
 
 export default function LandingLayout({
   children,

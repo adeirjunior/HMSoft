@@ -16,11 +16,10 @@ import {
   DropdownItem,
 } from "@nextui-org/react";
 import Link from "next/link";
-import { Button } from "@nextui-org/button";
 import { useState } from "react";
 import { ThemeSwitcher } from "../ThemeSwitcher";
 import { usePathname } from "next/navigation";
-import { mobileMenuItems } from "@/lib/utils/menuItems";
+import { mobileMenuItems } from "@/_lib/utils/menuItems";
 
 export default function UserFormHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

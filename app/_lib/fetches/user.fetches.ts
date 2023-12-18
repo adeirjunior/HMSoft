@@ -1,6 +1,6 @@
 import { noStore } from ".";
-import { User } from "../definitions/user.definitions";
-import { prisma } from "../utils/prisma";
+import { User } from "@/_lib/definitions/user.definitions";
+import { prisma } from "@/_lib/utils/prisma";
 
 export async function getUser(email: string) {
   noStore();
