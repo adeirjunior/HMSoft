@@ -16,7 +16,6 @@ import {
   DropdownItem,
 } from "@nextui-org/react";
 import Link from "next/link";
-import { Button } from "@nextui-org/button";
 import { useState } from "react";
 import { ThemeSwitcher } from "../ThemeSwitcher";
 import { usePathname } from "next/navigation";
@@ -28,7 +27,7 @@ export default function UserFormHeader() {
   const path = usePathname();
 
   return (
-    <Navbar className="fixed" isBordered onMenuOpenChange={setIsMenuOpen}>
+    <Navbar isBordered onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}

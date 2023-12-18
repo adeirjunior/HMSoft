@@ -1,5 +1,5 @@
 export default function page() {
   return (
-    <div>Hotels</div>
+    <div>Invoices</div>
   )
 }
