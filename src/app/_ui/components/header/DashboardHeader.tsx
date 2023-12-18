@@ -13,7 +13,7 @@ export default function DashboardHeader() {
 
 
   return (
-    <Navbar position="static">
+    <Navbar maxWidth="full" position="static">
       <NavbarContent justify="start">
         <NavbarBrand as={Link} href="/">
           <p className="font-bold text-2xl sm:text-4xl">HMSoft</p>

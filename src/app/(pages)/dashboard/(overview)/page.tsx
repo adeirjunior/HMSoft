@@ -9,8 +9,12 @@ export default function page() {
         <BreadcrumbItem>Dashboard</BreadcrumbItem>
         <BreadcrumbItem>Overview</BreadcrumbItem>
       </Breadcrumbs>
-      <Revenue/>
-      <TodaySales/>
+      <Revenue />
+      <TodaySales />
+      <Revenue />
+      <TodaySales />
+      <Revenue />
+      <TodaySales />
     </div>
   );
 }
