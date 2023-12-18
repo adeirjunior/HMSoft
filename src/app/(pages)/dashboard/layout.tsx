@@ -14,7 +14,7 @@ export default function LandingLayout({
         <div className="w-full flex-none md:w-64">
           <SideNav />
         </div>
-        <div className="flex-grow w-full p-6 md:p-12 md:border-1 md:rounded-lg md:border-gray-200 md:mr-6 md:mb-24 md:overflow-y-auto">
+        <div className="flex-grow w-full scrollbar-thin scrollbar-track-transparent scrollbar-thumb-black dark:scrollbar-thumb-gray-100 p-6 md:p-12 md:border-1 md:rounded-lg md:border-gray-200 dark:md:border-gray-800 md:mr-6 md:mb-24 md:overflow-y-auto">
           {children}
         </div>
       </div>
