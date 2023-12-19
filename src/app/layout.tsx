@@ -6,11 +6,38 @@ import { Providers } from "@/_ui/components/providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://hmsoft.vercel.app/"),
   title: {
     template: "%s | HMSoft",
     default: "HMSoft",
   },
   description: "Subscription based Hotel Property Management Software",
+  manifest: "/manifest.json",
+  applicationName: "HMSoft",
+  appleWebApp: {
+    capable: true,
+    title: "HMSoft",
+    statusBarStyle: "default",
+  },
+  formatDetection: {
+    telephone: false,
+  },
+  twitter: {
+    site: "https://hmsoft.vercel.app/",
+    description: "An amazing open-source property manager",
+    card: "summary",
+    title: "HMSoft",
+    creator: "@adeirju",
+    images: ["/hmsoft-landing-page.png"],
+  },
+  openGraph: {
+    type: "website",
+    title: "HMSoft",
+    description: "An amazing open-source property manager",
+    siteName: "HMSoft",
+    url: "https://hmsoft.vercel.app/",
+    images: ["/hmsoft-landing-page"],
+  },
 };
 
 export default function RootLayout({
