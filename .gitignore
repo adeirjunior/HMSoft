@@ -20,6 +20,12 @@ node_modules
 .DS_Store
 *.pem
 
+# pwa
+sw.js
+sw.js.map
+workbox*
+
+
 # debug
 npm-debug.log*
 yarn-debug.log*
