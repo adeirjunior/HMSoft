@@ -24,7 +24,7 @@ export default function HeaderAvatar() {
       <DropdownMenu aria-label="Profile Actions" variant="flat">
         <DropdownItem href="/profile" key="profile" className="h-14 gap-2">
           <p className="font-semibold">Signed in as</p>
-          <p className="font-semibold">zoey@example.com</p>
+          <p className="font-semibold">hello@adeir.me</p>
         </DropdownItem>
         <DropdownItem href="/settings/profile" key="settings">
           My Settings
