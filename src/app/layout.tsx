@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     description: "An amazing open-source property manager",
     siteName: "HMSoft",
     url: "https://hmsoft.vercel.app/",
-    images: ["/hmsoft-landing-page"],
+    images: ["/hmsoft-landing-page.png"],
   },
 };
 
