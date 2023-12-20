@@ -24,19 +24,19 @@ export const metadata: Metadata = {
   },
   twitter: {
     site: "https://hmsoft.vercel.app/",
-    description: "An amazing open-source property manager",
+    description:
+      "Empower hotel management with this open-source solution. Streamline operations and enhance collaboration using this software. #OpenSource #PropertyManagement",
     card: "summary",
     title: "HMSoft",
     creator: "@adeirju",
-    images: ["/hmsoft-landing-page.png"],
   },
   openGraph: {
     type: "website",
     title: "HMSoft",
-    description: "An amazing open-source property manager",
+    description:
+      "An amazing open-source property manager.  #OpenSource #PropertyManagement",
     siteName: "HMSoft",
     url: "https://hmsoft.vercel.app/",
-    images: ["/hmsoft-landing-page"],
   },
 };
 
