@@ -40,13 +40,17 @@ const sales = [
   },
 ];
 
+type TodaySalesProps = {
+  className: string;
+}
+
 const valueFormatter = (number: number | bigint) =>
   `$${Intl.NumberFormat("us").format(number).toString()}`;
 
-export default function TadaySales() {
+export default function TodaySales({className} : TodaySalesProps) {
   const [selectedComparison, setSelectedComparison] = useState("average");
   return (
-    <Card className="max-w-md">
+    <Card className={`${className} dark:bg-[#18181b]`}>
       <Text>Today&apos;s Sales</Text>
       <Metric className="mt-1">$ 276</Metric>
       <TabGroup>
@@ -80,8 +84,8 @@ export default function TadaySales() {
               color="emerald"
               className="mt-4"
             >
-              Today&apos;s sales currently outperform the sales average of all peer
-              products in North West region
+              Today&apos;s sales currently outperform the sales average of all
+              peer products in North West region
             </Callout>
           </TabPanel>
           <TabPanel>

@@ -1,67 +1,36 @@
-import {
-  Card,
-  Metric,
-  Text,
-  Flex,
-  BadgeDelta,
-  Grid,
-} from "@tremor/react";
+import { Card, Metric, Text, Flex, BadgeDelta } from "@tremor/react";
 
-const colors = {
-  increase: "emerald",
-  moderateIncrease: "emerald",
-  unchanged: "orange",
-  moderateDecrease: "rose",
-  decrease: "rose",
+type RevenueProps = {
+  item: {
+    title: string;
+    metricPrev: string;
+    deltaType: string;
+    delta: string;
+    metric: string;
+  };
 };
 
-const categories = [
-  {
-    title: "Sales",
-    metric: "$ 12,699",
-    metricPrev: "$ 9,456",
-    delta: "34.3%",
-    deltaType: "moderateIncrease",
-  },
-  {
-    title: "Profit",
-    metric: "$ 40,598",
-    metricPrev: "$ 45,564",
-    delta: "10.9%",
-    deltaType: "moderateDecrease",
-  },
-  {
-    title: "Customers",
-    metric: "1,072",
-    metricPrev: "856",
-    delta: "25.3%",
-    deltaType: "moderateIncrease",
-  },
-];
-
-export default function Revenue() {
+export default function Revenue({
+  item: { title, metricPrev, deltaType, delta, metric },
+}: RevenueProps) {
   return (
-    <Grid numItemsSm={2} numItemsLg={3} className="gap-6">
-      {categories.map((item) => (
-        <Card key={item.title}>
-          <Text>{item.title}</Text>
-          <Flex
-            justifyContent="start"
-            alignItems="baseline"
-            className="truncate space-x-3"
-          >
-            <Metric>{item.metric}</Metric>
-            <Text className="truncate">from {item.metricPrev}</Text>
-          </Flex>
-          <Flex justifyContent="start" className="space-x-2 mt-4">
-            <BadgeDelta deltaType={item.deltaType} />
-            <Flex justifyContent="start" className="space-x-1 truncate">
-              <Text>{item.delta}</Text>
-              <Text className="truncate">to previous month</Text>
-            </Flex>
-          </Flex>
-        </Card>
-      ))}
-    </Grid>
+    <Card key={title} className="dark:bg-[#18181b]">
+      <Text>{title}</Text>
+      <Flex
+        justifyContent="start"
+        alignItems="baseline"
+        className="truncate space-x-3"
+      >
+        <Metric>{metric}</Metric>
+        <Text className="truncate">from {metricPrev}</Text>
+      </Flex>
+      <Flex justifyContent="start" className="space-x-2 mt-4">
+        <BadgeDelta deltaType={deltaType} />
+        <Flex justifyContent="start" className="space-x-1 truncate">
+          <Text>{delta}</Text>
+          <Text className="truncate">to previous month</Text>
+        </Flex>
+      </Flex>
+    </Card>
   );
 }

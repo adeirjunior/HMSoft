@@ -1,7 +1,7 @@
 "use client"
 
 import {
-  Link as UILink,
+  Link,
   Navbar,
   NavbarBrand,
   NavbarContent,
@@ -10,7 +10,6 @@ import {
   NavbarMenu,
   NavbarMenuItem,
 } from "@nextui-org/react";
-import Link from "next/link";
 import { Button } from "@nextui-org/button";
 import { useState } from "react";
 import { ThemeSwitcher } from "../ThemeSwitcher";
@@ -29,8 +28,8 @@ export default function LandingPageHeader() {
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
-          <NavbarBrand as={Link} href="/" className="gap-3 w-auto">
-            <p className="font-bold text-2xl sm:text-4xl">HMSoft</p>
+          <NavbarBrand className="gap-3 w-auto">
+            <Link href="/" color="foreground" className="font-bold text-2xl sm:text-4xl">HMSoft</Link>
           </NavbarBrand>
       </NavbarContent>
 
@@ -39,9 +38,9 @@ export default function LandingPageHeader() {
           menuItems.map((item, key) => {
             return (
               <NavbarItem key={key} isActive={path === item.href}>
-                <UILink color="foreground" href={item.href}>
+                <Link color="foreground" href={item.href}>
                   {item.name}
-                </UILink>
+                </Link>
               </NavbarItem>
             );
           })
@@ -52,7 +51,7 @@ export default function LandingPageHeader() {
           <ThemeSwitcher />
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">
-          <UILink href="login">Login</UILink>
+          <Link href="login">Login</Link>
         </NavbarItem>
         <NavbarItem>
           <Button as={Link} color="primary" href="signup" variant="flat">
@@ -63,14 +62,14 @@ export default function LandingPageHeader() {
       <NavbarMenu>
         {mobileMenuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
-            <UILink
+            <Link
               color="foreground"
               className="w-full"
               href={item.href}
               size="lg"
             >
               {item.name}
-            </UILink>
+            </Link>
           </NavbarMenuItem>
         ))}
       </NavbarMenu>
