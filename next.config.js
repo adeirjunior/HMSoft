@@ -6,6 +6,16 @@ const withPWA = require("next-pwa")({
 });
 
 
-const nextConfig = {}
+const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/settings",
+        destination: "/settings/profile",
+        permanent: true,
+      },
+    ];
+  },
+};
 
 module.exports = withPWA(nextConfig)

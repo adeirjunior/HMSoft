@@ -28,7 +28,6 @@ export const metadata: Metadata = {
     card: "summary",
     title: "HMSoft",
     creator: "@adeirju",
-    images: ["/hmsoft-landing-page.png"],
   },
   openGraph: {
     type: "website",
@@ -36,7 +35,6 @@ export const metadata: Metadata = {
     description: "An amazing open-source property manager",
     siteName: "HMSoft",
     url: "https://hmsoft.vercel.app/",
-    images: ["/hmsoft-landing-page.png"],
   },
 };
 
