@@ -8,6 +8,7 @@ import {
 import { cn } from '@/lib/utils';
 import { CalendarIcon } from '@radix-ui/react-icons';
 import { addDays, format } from 'date-fns';
+import { ptBR } from 'date-fns/locale';
 import * as React from 'react';
 import { DateRange } from 'react-day-picker';
 
@@ -35,11 +36,11 @@ export function CalendarDateRangePicker({
                         {date?.from ? (
                             date.to ? (
                                 <>
-                                    {format(date.from, 'LLL dd, y')} -{' '}
-                                    {format(date.to, 'LLL dd, y')}
+                                    {format(date.from, 'LLL dd, y', {locale: ptBR})} -{' '}
+                                    {format(date.to, 'LLL dd, y', { locale: ptBR })}
                                 </>
                             ) : (
-                                format(date.from, 'LLL dd, y')
+                                    format(date.from, 'LLL dd, y', { locale: ptBR })
                             )
                         ) : (
                             <span>Pick a date</span>
@@ -54,6 +55,7 @@ export function CalendarDateRangePicker({
                         selected={date}
                         onSelect={setDate}
                         numberOfMonths={2}
+                        locale={ptBR}
                     />
                 </PopoverContent>
             </Popover>

@@ -113,7 +113,7 @@ const chartData = [
 
 const chartConfig = {
     views: {
-        label: 'Page Views'
+        label: 'Visualizações',
     },
     desktop: {
         label: 'Desktop',
@@ -122,7 +122,7 @@ const chartConfig = {
     mobile: {
         label: 'Mobile',
         color: 'hsl(var(--chart-2))'
-    }
+    },
 } satisfies ChartConfig;
 
 export function BarGraph() {
@@ -141,9 +141,9 @@ export function BarGraph() {
         <Card>
             <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row">
                 <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
-                    <CardTitle>Bar Chart - Interactive</CardTitle>
+                    <CardTitle>Grafico de barras - Interativo</CardTitle>
                     <CardDescription>
-                        Showing total visitors for the last 3 months
+                        Mostrando o total de visitantes dos ultimos 3 meses
                     </CardDescription>
                 </div>
                 <div className="flex">
@@ -189,7 +189,7 @@ export function BarGraph() {
                             minTickGap={32}
                             tickFormatter={(value) => {
                                 const date = new Date(value);
-                                return date.toLocaleDateString('en-US', {
+                                return date.toLocaleDateString('pt-BR', {
                                     month: 'short',
                                     day: 'numeric'
                                 });
@@ -201,7 +201,7 @@ export function BarGraph() {
                                     className="w-[150px]"
                                     nameKey="views"
                                     labelFormatter={(value) => {
-                                        return new Date(value).toLocaleDateString('en-US', {
+                                        return new Date(value).toLocaleDateString('pt-BR', {
                                             month: 'short',
                                             day: 'numeric',
                                             year: 'numeric'
