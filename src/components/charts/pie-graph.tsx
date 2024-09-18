@@ -58,7 +58,7 @@ export function PieGraph() {
     return (
         <Card className="flex flex-col">
             <CardHeader className="items-center pb-0">
-                <CardTitle>Grafico de Pizza - Cisculo com Texto</CardTitle>
+                <CardTitle>Grafico de Pizza - Circulo com Texto</CardTitle>
                 <CardDescription>Janeiro - Junho 2024</CardDescription>
             </CardHeader>
             <CardContent className="flex-1 pb-0">
